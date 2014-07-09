@@ -31,7 +31,7 @@ class ActivitiService {
 	def identityService
 	def formService
 	String sessionUsernameKey = CH.config.activiti.sessionUsernameKey?:ActivitiConstants.DEFAULT_SESSION_USERNAME_KEY
-	String usernamePropertyName = CH.config.grails.plugins.springsecurity.userLookup.usernamePropertyName
+	String usernamePropertyName = CH.config.grails.plugin.springsecurity.userLookup.usernamePropertyName
 
 	def startProcess(Map params) {
 		if (params.businessKey) {
