@@ -32,7 +32,7 @@ import org.grails.activiti.serializable.SerializableVariableType
  */
 class ActivitiGrailsPlugin {
     // the plugin version
-    def version = "5.15.1"
+    def version = "5.15.1.1"
 
     // the version or versions of Grails the plugin is designed for
     def grailsVersion = "2.0.0 > *"
@@ -95,7 +95,8 @@ class ActivitiGrailsPlugin {
 	        mailServerPort = CH.config.activiti.mailServerPort?:ActivitiConstants.DEFAULT_MAIL_SERVER_PORT
 	        mailServerUsername = CH.config.activiti.mailServerUsername
 	        mailServerPassword = CH.config.activiti.mailServerPassword
-	        mailServerDefaultFrom = CH.config.activiti.mailServerDefaultFrom?:ActivitiConstants.DEFAULT_MAIL_SERVER_FROM
+          customSessionFactories = [ref("userManagerFactory"), ref("groupManagerFactory")]
+          mailServerDefaultFrom = CH.config.activiti.mailServerDefaultFrom?:ActivitiConstants.DEFAULT_MAIL_SERVER_FROM
 	        dataSource = ref("dataSource")
 	        transactionManager = ref("transactionManager")
 
